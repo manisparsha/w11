@@ -2,10 +2,11 @@
 FROM openjdk:11-jdk-slim
 
 # Copy the application JAR file
-COPY SimpleApp.jar /app/SimpleApp.jar
+COPY . /app
 
 # Set the working directory
 WORKDIR /app
 
+RUN javac Main.java
 # Command to run the application
-CMD ["java", "-jar", "SimpleApp.jar"]
+CMD ["java", "Main"]
